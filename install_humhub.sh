@@ -42,7 +42,7 @@ pct exec $CT_ID -- mysql -e "FLUSH PRIVILEGES;"
 echo "=== 6. Скачивание и распаковка HumHub ==="
 pct exec $CT_ID -- mkdir -p /var/www/humhub
 HUMHUB_VER=$(curl -s https://github.com | grep -oP '"tag_name": "\K[^"]*')
-pct exec $CT_ID -- curl -L -o /tmp/humhub.tar.gz "https://github.com{HUMHUB_VER}.tar.gz"
+pct exec $CT_ID -- curl -L -o /tmp/humhub.tar.gz "https://github.com-1.13.0.tar.gz"
 pct exec $CT_ID -- tar -xzf /tmp/humhub.tar.gz -C /var/www/humhub --strip-components=1
 
 echo "=== 7. Настройка прав доступа ==="
